@@ -25,16 +25,14 @@ my_entry_2.grid(row=6,column=3,padx=30,pady=5)
 def calculator():
     weight_str = my_entry.get()
     height_str = my_entry_2.get()
-    if not weight_str or not height_str:  #kullanıcı değer girmesse
-        # veya buraya if weight_Str == "" or height_str == "" da yapabilirdik
+    if not weight_str or not height_str: 
         message = "Please enter both weight and height."
-    elif not weight_str.isnumeric() or not height_str.isnumeric(): # kullanıcı sayısal değer girmese
-        # bu kısım yerine kullanılabilecek şey ise else içinde try except kullanıp except kısmına bu mesajı yazarız
+    elif not weight_str.isnumeric() or not height_str.isnumeric(): 
         message = "Please enter valid numeric values for weight and height."
     else:
         weight = float(weight_str)
         height = float(height_str)
-        BMIndex = round(weight / ((height / 100) ** 2),2) #sadece virgülden sonra 2 basamak kalacak şekilde yuvarla
+        BMIndex = round(weight / ((height / 100) ** 2),2) 
         if BMIndex < 16.0:
             message = f"Your BMI is {BMIndex}.You are Severely Underweight"
         elif BMIndex < 18.4:
